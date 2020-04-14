@@ -9,5 +9,9 @@ router.get('/auth/google', passport.authenticate('google', {
     scope: ['profile', 'email']
 }));
 
+router.get('/auth/current-user', (req, res) =>{
+    res.send(req.user);
+});
+
 module.exports = router;
 
